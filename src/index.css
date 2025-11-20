@@ -24,8 +24,8 @@ a:hover {
 
 body {
   margin: 0;
-  padding: 0;
   box-sizing: border-box;
+  padding-top: 6rem;
 }
 
 h1 {
@@ -44,13 +44,6 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
 
 .welcome_title{
   color: #646cff;
@@ -65,15 +58,25 @@ button:focus-visible {
   font-size: 20px;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.custom-nav{
+  background-color: #646cff;
+  font-size: 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.custom-nav ul{
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  gap: 10px;
+}
+
+li a {
+  font-weight: 500;
+  color: #1a1a1a;
+  text-decoration: inherit;
+}
+li a:hover {
+  color: rgb(36, 36, 36);
 }

@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <Header />
+      <Header title="Title" />
       <List nomi={nomi} />
       <div id='box'>
         <h1 className='space welcome_title'>Hello World!</h1>

@@ -54,7 +54,15 @@ button:focus-visible {
 
 .welcome_title{
   color: #646cff;
+}
+
+.space{
   padding: 20px;
+}
+
+.first-label,
+.first-input {
+  font-size: 20px;
 }
 
 @media (prefers-color-scheme: light) {

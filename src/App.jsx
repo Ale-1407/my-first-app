@@ -1,4 +1,5 @@
 import './App.css'
+import Counter from './components/Counter';
 import Header from './components/Header'
 import List from './components/List'
 import Navbar from './components/Navbar'
@@ -6,6 +7,7 @@ import Navbar from './components/Navbar'
 function App() {
 
   const nomi = ['Alessia', 'Federico', 'Simone', 'Sara'];
+
 
   return (
     <>
@@ -17,6 +19,7 @@ function App() {
         <label htmlFor="input" className='space first-label'>Inserisci del testo:</label>
         <input type="text" id='input'className='space first-input' placeholder='Scrivi...'/>
       </div>
+      <Counter/>
     </>
   )
 }

@@ -1,5 +1,6 @@
 import './App.css'
 import Counter from './components/Counter';
+import Form from './components/Form';
 import Header from './components/Header'
 import List from './components/List'
 import Navbar from './components/Navbar'
@@ -20,6 +21,7 @@ function App() {
         <input type="text" id='input'className='space first-input' placeholder='Scrivi...'/>
       </div>
       <Counter/>
+      <Form />
     </>
   )
 }

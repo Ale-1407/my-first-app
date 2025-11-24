@@ -6,7 +6,7 @@ export default function Form() {
     const [userName, setUserName] = useState("");
     const [userMail, setUserMail] = useState("");
     
-    const [submittedData, setSubmittedData] = useState(null);
+    const [submittedData, setSubmittedData] = useState([]);
 
     const handleSubmit = (ev) => {
         ev.preventDefault();
@@ -16,7 +16,12 @@ export default function Form() {
             mail: userMail,
         };
 
-        setSubmittedData(newCard);
+        const addingNewCard = [ ...submittedData, newCard];
+        setSubmittedData(addingNewCard);
+
+        // resetto i campi
+        setUserName("");
+        setUserMail("");
     }
 
     return (
@@ -36,13 +41,10 @@ export default function Form() {
                     <button type="submit" className="btn btn-outline-light">Aggiungi</button>
                 </div>
             </form>
-           
-           { submittedData && ( 
-            <Card 
-                name={submittedData.name} 
-                mail={submittedData.mail} 
-                /> 
-            )} 
+            {submittedData.map( (el, index) => (
+                <Card name={el.name} mail={el.mail} key={index}  />
+            ))}
+                
         </>
     )
 }

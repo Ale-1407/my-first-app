@@ -37,7 +37,7 @@ function App() {
     <>
       <Navbar />
       <Header title="Title" />
-      <Main>
+      <Main className="padding">
         <Main.List>
           {nomi.map((nome, index) => {
             return <Main.List.Items key={index}>{nome}</Main.List.Items>

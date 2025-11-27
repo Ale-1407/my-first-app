@@ -2,8 +2,8 @@ import List from "./List";
 import Items from "./Items";
 import Form from "./Form";
 
-export default function Main({children}) {
-    return <main>{children}</main>;
+export default function Main({children, className}) {
+    return <main className={className}>{children}</main>;
 }
 
 Main.List = List;

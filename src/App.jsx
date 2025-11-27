@@ -1,20 +1,52 @@
 import './App.css'
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Counter from './components/Counter';
 import Header from './components/Header'
 import Main from './components/Main';
 import Card from './components/Card';
 import Navbar from './components/Navbar'
+import LoadingData from './components/LoadingData';
 
 
 function App() {
 
   const nomi = ['Alessia', 'Federico', 'Simone', 'Sara', 'Roberto', 'Gin'];
 
-  // logica da Form
   const [userName, setUserName] = useState("");
   const [userMail, setUserMail] = useState("");
   const [submittedData, setSubmittedData] = useState([]);
+
+  const [users, setUsers] = useState([]);
+  //imposto trigger per visualizzare i dati al click del bottone
+  const [trigger, setTrigger] = useState(false); 
+  const [isVisible, setIsVisible] = useState(false);
+  
+
+  const getData = async () => {
+    const promise = await fetch('https://jsonplaceholder.typicode.com/users');
+    const json = await promise.json();
+    setUsers(json);
+    console.log(json);
+  }
+  
+  useEffect(() => {
+
+    if(trigger){
+      getData();
+    }
+
+  }, [trigger] );
+
+  const handleClick = () => {
+    if(isVisible) {
+      setIsVisible(false);
+      setTrigger(false);
+      setUsers(null);
+    } else {
+      setIsVisible(true);
+      setTrigger(true);
+    }
+  }
 
   const handleSubmit = (ev) => {
         ev.preventDefault();
@@ -58,6 +90,14 @@ function App() {
         <input type="text" id='input'className='space first-input' placeholder='Scrivi...'/>
       </div>
       <Counter/>
+      <LoadingData title="Ricerca utenti:">
+        <button onClick={handleClick} className='btn btn-outline-light mb-3' >Cerca</button>
+        <ul>
+          {isVisible && users && users.map((user) => {
+            return <li key={user.id}>Name: {user.name}, Email: {user.email}</li>
+          })}
+        </ul>
+      </LoadingData>
     </>
   )
 }

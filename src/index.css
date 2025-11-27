@@ -49,6 +49,7 @@ h1 {
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 9999;
 }
 .custom-nav ul{
   padding: 0;
@@ -81,6 +82,6 @@ li a:hover {
   width: 18rem;
 }
 
-.main{
-  padding-top: 80px;
+.padding{
+  padding-top: 70px;
 }

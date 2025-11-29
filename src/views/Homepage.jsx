@@ -66,7 +66,6 @@ export default function Homepage() {
 
       return (
         <>
-          <Navbar />
           <Header title="Title" />
           <Main className="padding">
             <Main.List>

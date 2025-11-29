@@ -1,12 +1,15 @@
+import { Link } from "react-router";
+
+
 export default function Navbar(){
     return (
         <nav className="custom-nav space">
             <ul>
                 <li>
-                    <a href="#">Home</a>
+                   <Link to={'/'}>Home</Link>
                 </li>
                 <li>
-                    <a href="https://github.com/">About</a>
+                    <Link to={'/posts'}>Posts</Link>
                 </li>
             </ul>  
         </nav>

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router";
 
 export default function Posts() {
 
@@ -27,7 +28,7 @@ export default function Posts() {
                 <h1>Posts Page</h1>
                 <ul>
                     {posts && posts.map((post) => {
-                        return <li key={post.id}>{post.title} </li>
+                        return <li key={post.id}>{post.title} : <Link to={`/posts/$post.id`}>Detail</Link> </li>
                     })}
                 </ul>
             </div>
